@@ -13,11 +13,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Jetbrains Mono NerdFont:size=11", "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=12";
-/* static const char col_gray1[]       = "#171717"; */
-/* static const char col_gray2[]       = "#404040"; */
-/* static const char col_gray3[]       = "#a1a1aa"; */
-/* static const char col_gray4[]       = "#171717"; */
-/* static const char col_accent[]      = "#14b8a6"; */
+
 static const char *colors[][3]      = {
 	/*               fg         bg           border     */
 	[SchemeNorm] = { col_gray3, col_gray1 ,  col_gray2   },
@@ -95,11 +91,11 @@ static const char *rofi[] = {"rofi","-show-icons","-show","drun"};
 static const Key keys[] = {
   /* modifier                     key        function        argument */
 
-	// open app launcher MOD+r
-  { MODKEY,                       XK_r,      spawn,          {.v = rofi} },
+  // open app launcher MOD+r
+  	{ MODKEY,                       XK_r,      spawn,          {.v = rofi} },
 
-	// spawn terminal MOD+return
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+  // spawn terminal MOD+return
+  	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
   // screenshot MOD+s (requires script in ~/Dev/scripts/screenshot.sh)
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("exec ~/Dev/scripts/screenshot.sh") },
@@ -158,12 +154,12 @@ static const Key keys[] = {
 	{ MODKEY|ALTKEY,                XK_4,      setlayout,      {.v = &layouts[11]} }, // centeredmaster
 	{ MODKEY|ALTKEY,                XK_5,      setlayout,      {.v = &layouts[5]}  }, // bstac
 	{ MODKEY|ALTKEY,                XK_6,      setlayout,      {.v = &layouts[7]}  }, // grid
-  { MODKEY|ALTKEY,                XK_7,      setlayout,      {.v = &layouts[2]}  }, // spiral
+  	{ MODKEY|ALTKEY,                XK_7,      setlayout,      {.v = &layouts[2]}  }, // spiral
 	// { MODKEY,                       XK_space,  setlayout,      {0} },
 	// { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 
-  // manually resetlayout
-  { MODKEY|ShiftMask,             XK_r,      resetlayout,    {0} },
+  	// manually resetlayout
+  	{ MODKEY|ShiftMask,             XK_r,      resetlayout,    {0} },
 
 	// view all windows MOD+0
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -177,13 +173,13 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
-  // setborderpx MOD+{ MOD+}
-  { MODKEY|ShiftMask,             XK_bracketleft, 		setborderpx,    {.i = -2 } },
-	{ MODKEY|ShiftMask,             XK_bracketright, 		setborderpx,    {.i = +2 } },
-  // { MODKEY|ShiftMask,             XK_numbersign, 	setborderpx,    {.i = 0 } },
+  	// setborderpx MOD+{ MOD+}
+  	{ MODKEY|ShiftMask,            XK_bracketleft, 	setborderpx,    {.i = -2 } },
+	{ MODKEY|ShiftMask,            XK_bracketright, 	setborderpx,    {.i = +2 } },
+  	// { MODKEY|ShiftMask,             XK_numbersign, 	setborderpx,    {.i = 0 } },
 
-  { 0,             				XK_Print,  		spawn,          		{.v = flamcmd } },
-	{ MODKEY|ShiftMask,             XK_Print,  		spawn,          		{.v = flamfcmd } },
+  	{ 0,             		XK_Print,  spawn,       {.v = flamcmd } },
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,       {.v = flamfcmd } },
 	// change tag MOD+[1-9]
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
