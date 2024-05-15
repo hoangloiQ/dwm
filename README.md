@@ -5,4 +5,4 @@ Optional : `alacritty feh picom rofi nvim` <br/><br/>
 Font : `JetBrainsMono Nerd Font` <br/><br/>
 To config : edit `config.h` <br/><br/>
 To install : `sudo make clean install` <br/><br/>
-Other configs in my repos.
+Other configs can be found in my [repos](https://github.com/hoangloiQ/)
